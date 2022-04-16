@@ -1,0 +1,25 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Introduzione}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Il progetto}{2}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Progettazione e codifica}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Tecnologie utilizzate}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Vue}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Vuetify}{4}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Vuex}{5}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Organizzazione dei file}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Chiamate al back end}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}CurrentUser.js}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}NftService.js}{9}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Maschere implementate}{11}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Barra di navigazione}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Home}{11}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Visualizza dettagli}{12}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Login}{12}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Registrazione}{13}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Pagina dell'utente}{14}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Upload opera}{14}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Gestione opere}{15}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.4.9}Modifica dati personali}{16}{subsection.2.4.9}%
+\contentsline {subsection}{\numberline {2.4.10}Modifica password}{16}{subsection.2.4.10}%
+\contentsline {section}{\numberline {2.5}Generazione della preview}{16}{section.2.5}%

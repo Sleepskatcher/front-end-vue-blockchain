@@ -1,0 +1,649 @@
+openapi: 3.1.0
+info:
+  title: NFT Api
+  version: '1.0'
+  contact:
+    name: SyncLab
+  description: 'NFT API '
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /login:
+    post:
+      summary: ''
+      operationId: post-login
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+      description: endpoint per accedere all'applicazione
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      tags:
+        - User
+  /signup:
+    post:
+      summary: ''
+      operationId: post-signup
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
+        '500':
+          description: Internal Server Error
+      description: Registrazione di un utente
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+  /nft:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - NFT
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Nft'
+              examples:
+                test1:
+                  value:
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Contemporaneità
+                      description: Opera interessante e contemporanea di grande spessore
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: video
+                      owner: Filippo Baggio
+                      author: Frank Sinatra
+                      categories:
+                        - id: 3
+                          name: food
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Opera di mio figlio
+                      description: Interessante opera creata da mio figlio
+                      authorId: 15
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Andrea Rossi
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: L'unico anello
+                      description: Questo è l'unico anello
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frodo Baggins
+                      author: Celebrimbor
+                      categories:
+                        - id: 3
+                          name: food
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Interessante
+                      description: 'Opera molto interessante, a mio parere vale molto'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: doc
+                      owner: Andrea Rossi
+                      author: Frank Moses
+                      categories:
+                        - id: 3
+                          name: food
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Cantando sotto la pioggia
+                      description: Opera omaggio al celebre musical Cantanto sotto la pioggia
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: audio
+                      owner: Frank Moses
+                      author: Frank Moses
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Ricordi di un'estate
+                      description: Opera creata durante le mie ultime vacanze estive
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Inverno
+                      description: Che bello il rumore del caminetto acceso con fuori una bella nevicata prima di Natale
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Sinatra
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Primavera
+                      description: 'Un fiore, del vento fresco, un''ape svolazzante e un palloncino che vola nel cielo'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Fiori blu
+                      description: Un dipinto di bellissimi fiori blu
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: audio
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Realtà alternativa
+                      description: Una dimensione parallela o universo parallelo è un ipotetico universo separato e distinto dal nostro ma coesistente con esso
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: oses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Primavera
+                      description: 'Un fiore, del vento fresco, un''ape svolazzante e un palloncino che vola nel cielao'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+      operationId: get-nft
+      description: Homepage
+      parameters:
+        - schema:
+            type: array
+          in: query
+          name: categorie
+        - schema:
+            type: string
+          in: query
+          name: nomeNft
+        - schema:
+            type: array
+          in: query
+          name: tipologie
+        - schema:
+            type: number
+          in: query
+          name: prezzoMin
+        - schema:
+            type: number
+          in: query
+          name: prezzoMax
+  /categories:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+              examples:
+                test1:
+                  value:
+                    - id: 3
+                      name: food
+                    - id: 2
+                      name: sport
+      operationId: get-categories
+      description: Categorie di un opera
+  '/user/{id}':
+    put:
+      summary: ''
+      operationId: put-user
+      responses:
+        '200':
+          description: OK
+        '417':
+          description: Expectation Failed
+          headers: {}
+      description: Modificare dati dell'utente
+      tags:
+        - User
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: ''
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  /user/password:
+    put:
+      summary: ''
+      operationId: put-user-password
+      responses:
+        '200':
+          description: OK
+      description: Modifica passowrd
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPassword'
+  '/nft/user/{userId}':
+    get:
+      summary: Your GET endpoint
+      tags:
+        - User
+        - NFT
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Nft'
+              examples:
+                test1:
+                  value:
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Ora
+                      description: Opera interessante e contemporanea di grande spessore
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: video
+                      owner: Filippo Baggio
+                      author: Frank Sinatra
+                      categories:
+                        - id: 3
+                          name: food
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Figlio mio
+                      description: Interessante opera creata da mio figlio
+                      authorId: 15
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Andrea Rossi
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: L'anello
+                      description: Questo è l'unico anello
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frodo Baggins
+                      author: Celebrimbor
+                      categories:
+                        - id: 3
+                          name: food
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Di valore
+                      description: 'Opera molto interessante, a mio parere vale molto'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: doc
+                      owner: Andrea Rossi
+                      author: Frank Moses
+                      categories:
+                        - id: 3
+                          name: food
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Cantando
+                      description: Opera omaggio al celebre musical Cantanto sotto la pioggia
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: audio
+                      owner: Frank Moses
+                      author: Frank Moses
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Estate
+                      description: Opera creata durante le mie ultime vacanze estive
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Inverno
+                      description: Che bello il rumore del caminetto acceso con fuori una bella nevicata prima di Natale
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Sinatra
+                      author: Andrea Rossi
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Primavera
+                      description: 'Un fiore, del vento fresco, un''ape svolazzante e un palloncino che vola nel cielo'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Fiori blu
+                      description: Un dipinto di bellissimi fiori blu
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: audio
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Realtà
+                      description: Una dimensione parallela o universo parallelo è un ipotetico universo separato e distinto dal nostro ma coesistente con esso
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: oses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+                    - id: Qmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat
+                      title: Primavera
+                      description: 'Un fiore, del vento fresco, un''ape svolazzante e un palloncino che vola nel cielao'
+                      authorId: 18
+                      price: 52
+                      currency: ETH
+                      status: false
+                      path: gallery/imgQmb13ALEkqXtVXGxCSXJvAQNVwytCFcr5DT6jcrXuUGjat.jpg
+                      type: img
+                      owner: Frank Moses
+                      author: Frank Sinatra
+                      categories:
+                        - id: 2
+                          name: sport
+      operationId: get-nft-user
+      description: Opere dell'utente
+      parameters: []
+    post:
+      summary: ''
+      operationId: post-nft-user
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Nft'
+        '500':
+          description: Internal Server Error
+      description: Inserimento opera
+      parameters: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+              format: binary
+        description: ''
+      tags:
+        - NFT
+        - User
+    put:
+      summary: ''
+      operationId: put-nft-user
+      responses:
+        '200':
+          description: OK
+      parameters: []
+      description: Modifica di un opera dell'utente
+      tags:
+        - NFT
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Nft'
+            examples:
+              example-1:
+                value:
+                  id: string
+                  name: string
+                  description: string
+                  author: string
+                  owner: string
+                  price: 0
+                  categories:
+                    - id: 3
+                      name: strin
+                  type: string
+                  currency: string
+                  path: string
+    parameters:
+      - schema:
+          type: string
+        name: userId
+        in: path
+        required: true
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+        name:
+          type: string
+          maxLength: 10
+          minLength: 4
+        surname:
+          type: string
+        dob:
+          type: string
+          format: date
+        wallet:
+          type: string
+          pattern: '^0x[a-fA-F0-9]{40}$'
+      required:
+        - email
+        - password
+    Nft:
+      title: Nft
+      type: object
+      examples: []
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          minLength: 5
+        author:
+          type: string
+        owner:
+          type: string
+        price:
+          type: number
+          example: 0
+          minimum: 1
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        type:
+          type: string
+          enum:
+            - img
+            - video
+            - audio
+            - doc
+        currency:
+          type: string
+        path:
+          type: string
+    NewPassword:
+      title: NewPassword
+      type: object
+      description: Password
+      properties:
+        id:
+          type: string
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+    Category:
+      title: Category
+      type: object
+      x-tags:
+        - category
+      properties:
+        id:
+          type: number
+          minimum: 1
+          maximum: 6
+          example: 3
+          multipleOf: 1
+        name:
+          type: string
+          minLength: 3
+          maxLength: 5
+tags:
+  - name: Log
+  - name: NFT
+  - name: User

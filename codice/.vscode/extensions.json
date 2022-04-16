@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    // VUE
+    "jcbuisson.vue",
+    "sdras.vue-vscode-snippets",
+    "vuetifyjs.vuetify-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    // -------- COMMONS --------
+    // GIT
+    "GitHub.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    // OTHER
+    "editorconfig.editorconfig",
+    "Gruntfuggly.todo-tree",
+    "pflannery.vscode-versionlens",
+    "redhat.vscode-yaml",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ]
+}
